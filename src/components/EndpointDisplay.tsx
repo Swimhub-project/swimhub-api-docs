@@ -1,4 +1,6 @@
+import SyntaxHighlighter from 'react-syntax-highlighter';
 import { EndpointData } from '../utils/types/endpointType';
+import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 interface Props {
   data: EndpointData;
@@ -18,7 +20,7 @@ const EndpointDisplay = ({ data }: Props) => {
                 <li>
                   <p>
                     {item.name}
-                    <span>{item.required ? 'REQUIRED' : 'optional'}</span>
+                    <span>{item.type}</span>
                   </p>
                   <p>{item.description}</p>
                 </li>
@@ -34,7 +36,10 @@ const EndpointDisplay = ({ data }: Props) => {
                 <li>
                   <p>
                     {item.name}
-                    <span>{item.required ? 'REQUIRED' : 'optional'}</span>
+                    <span>{item.type}</span>
+                  </p>
+                  <p className="required">
+                    {item.required ? 'REQUIRED' : 'optional'}
                   </p>
                   <p>{item.description}</p>
                 </li>
@@ -43,7 +48,22 @@ const EndpointDisplay = ({ data }: Props) => {
           </div>
         )}
       </div>
-      <div>{/* example request and response goes here */}</div>
+      <div className="col-right">
+        <div>
+          <h3>Request</h3>
+          <SyntaxHighlighter
+            language="javascript"
+            showLineNumbers={true}
+            style={a11yDark}
+          >
+            {data.exampleReq}
+          </SyntaxHighlighter>
+        </div>
+        <div className="object-display">
+          <h3>Response</h3>
+          <pre>{data.exampleRes}</pre>
+        </div>
+      </div>
     </article>
   );
 };

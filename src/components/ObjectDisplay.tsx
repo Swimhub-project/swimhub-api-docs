@@ -7,8 +7,8 @@ interface Props {
 const ObjectDisplay = ({ data }: Props) => {
   return (
     <article id={data.id}>
+      <h2>{data.name}</h2>
       <div>
-        <h2>{data.name}</h2>
         <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
         <div>
           <h3>Attributes</h3>
@@ -26,7 +26,10 @@ const ObjectDisplay = ({ data }: Props) => {
           </ul>
         </div>
       </div>
-      <div>{/* example object goes here */}</div>
+      <div className="object-display">
+        <h3>Example {data.name}</h3>
+        <pre>{data.exampleObj}</pre>
+      </div>
     </article>
   );
 };

@@ -71,10 +71,23 @@ export const userObjAdmin: ObjectData = {
     {
       name: 'moderator_notes',
       description: `Notes created by moderators and admins relating to user.`,
-      type: 'strings array',
+      type: 'array of JSON objects',
     },
   ],
-  exampleObj: 'asd', //TODO fill out example object
+  exampleObj: `{
+  "id": "clo71e78x0000mc0olvreol2q",
+  "name": "joe bloggs",
+  "user_name": joeschmoo,
+  "email": joe435@mail.com,
+  "role": user,
+  "status": active,
+  "created_on": 2023-10-26 11:23:47,
+  "updated_on": 2023-10-27 8:20:40,
+  "is_teacher": false,
+  "bio": "hi, my name is joe and I'm a swimming assistant.",
+  "is_bio_public": true,
+  "moderator_notes": [],
+}`,
 };
 
 export const userObjStripped: ObjectData = {
@@ -113,11 +126,29 @@ export const userObjStripped: ObjectData = {
       type: 'UserRole',
     },
     {
-      name: 'status',
-      description: `Assigned user status. For more info on statuses, 
-      see <a href='#user_status'>User Status</a>`,
-      type: 'UserStatus',
+      name: 'is_teacher',
+      description: `Boolean value. Users with Teacher status have additional privaledges.`,
+      type: 'boolean',
+    },
+    {
+      name: 'bio',
+      description: `Bio that displays on user's profile if made public.`,
+      type: 'string',
+    },
+    {
+      name: 'is_bio_public',
+      description: `Boolean value. If true, user bio is visible to all users.`,
+      type: 'boolean',
     },
   ],
-  exampleObj: 'asd', //TODO fill out example object
+  exampleObj: `{
+    "id": "clo71e78x0000mc0olvreol2q",
+    "name": "joe bloggs",
+    "user_name": joeschmoo,
+    "email": joe435@mail.com,
+    "role": user,
+    "is_teacher": false,
+    "bio": "hi, my name is joe and I'm a swimming assistant.",
+    "is_bio_public": true,
+  }`,
 };

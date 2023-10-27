@@ -1,6 +1,7 @@
 @import url(./components/sidenav.css);
 @import url(./components/header.css);
 @import url(./components/footer.css);
+@import url(./components/object.css);
 
 :root {
   --grey: rgb(105, 115, 134);
@@ -8,6 +9,7 @@
   --light-grey: rgb(135, 146, 162);
   --blue: rgb(85, 108, 214);
   --border: rgb(227, 232, 238);
+  --red: rgb(229, 111, 74);
 }
 
 html {
@@ -35,9 +37,20 @@ h2 {
   color: var(--black);
 }
 
-p,
-span {
+p {
   color: rgb(79, 86, 107);
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
 }
 
 ul {
@@ -71,6 +84,12 @@ article {
   gap: 2em;
 }
 
+article h1,
+article h2 {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
 article:last-of-type {
   border-bottom: none;
 }
@@ -87,4 +106,20 @@ article li p {
 
 article li p span {
   font-weight: normal;
+  margin-left: 0.5em;
+}
+
+.required {
+  margin-top: 0;
+  color: var(--red);
+  font-size: 12px;
+}
+
+.col-right {
+  max-width: 500px;
+  margin: 0 auto;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

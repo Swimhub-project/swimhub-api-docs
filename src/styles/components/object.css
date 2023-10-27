@@ -1,0 +1,25 @@
+.object-display {
+  border-radius: 10px;
+  background-color: #f7fafc;
+  padding-bottom: 1em;
+  height: max-content;
+  box-shadow: 1px rgba(0, 0, 0, 0.07);
+}
+
+.object-display h3 {
+  background-color: rgb(227, 232, 238);
+  margin: 0;
+  padding: 0.5em;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 1em;
+  font-size: 16px;
+}
+
+.object-display span {
+  padding-left: 1em;
+  font-size: 16px;
+}
+
+.object-display pre {
+  padding-left: 1em;
+}

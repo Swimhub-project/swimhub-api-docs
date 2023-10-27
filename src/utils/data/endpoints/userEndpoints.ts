@@ -48,8 +48,30 @@ export const userEndpoints: EndpointData[] = [
     with a 201 status code. Returns an error if something goes wrong. 
     A common source of error is missing or invalid body parameters. 
     The error object will contain an array with the affected body parameters.`,
-    exampleReq: 'asdf', //TODO fill out example fetch request
-    exampleRes: 'asd', //TODO fill out example fetch response
+    exampleReq: `const response = await fetch('https://swimhub-production.up.railway.app/user/signup', 
+    {
+      headers: {
+        "content-type": "application/json"
+      }
+      method: "POST",
+      body: JSON.stringify({
+        name: "joe bloggs",
+        email: "joe435@mail.com",
+        password: "hello123Hi?",
+        repeatPassword: "hello123Hi?",
+      })
+    })
+    `,
+    exampleRes: `{
+      "id": "clo71e78x0000mc0olvreol2q",
+      "name": "joe bloggs",
+      "user_name": "",
+      "email": joe435@mail.com,
+      "role": user,
+      "is_teacher": false,
+      "bio": "",
+      "is_bio_public": false,
+    }`,
   },
   //sign in user POST request
   {

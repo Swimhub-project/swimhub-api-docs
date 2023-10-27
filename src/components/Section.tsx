@@ -10,13 +10,13 @@ const Section = ({ data }: Props) => {
   return (
     <section id={data.id}>
       <article>
+        <h1>{data.name}</h1>
         <div>
-          <h1>{data.name}</h1>
           <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
         </div>
 
         {data.endpoints && (
-          <div>
+          <div className="object-display">
             <h3>ENDPOINTS</h3>
             {data.endpoints.map((item, index) => (
               <div key={index}>
