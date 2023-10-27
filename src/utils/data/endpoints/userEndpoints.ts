@@ -84,7 +84,7 @@ export const userEndpoints: EndpointData[] = [
   //request password reset POST request
   {
     id: 'request_new_password',
-    name: 'Request a new password for user',
+    name: 'Request a new password',
     method: 'POST',
     url: '/user/reset_password',
     availableTo: 'everyone',
@@ -109,7 +109,7 @@ export const userEndpoints: EndpointData[] = [
   //resend email verification POST request
   {
     id: 'resend_email_verification',
-    name: 'Resend email verification for user',
+    name: 'Resend email verification',
     method: 'POST',
     url: '/user/resend_verify',
     availableTo: 'user',

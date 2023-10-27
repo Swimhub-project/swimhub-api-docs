@@ -1,0 +1,44 @@
+aside {
+  padding: 0 1em;
+  border-right: 0.5px solid var(--border);
+}
+
+aside nav {
+}
+
+aside ul {
+  padding-left: 0;
+}
+
+aside li {
+  list-style: none;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
+aside li a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+aside li a:hover {
+  color: var(--black);
+}
+
+aside ul.nested {
+  padding-left: 2em;
+}
+
+aside ul.nested li {
+  margin-bottom: 1em;
+}
+
+aside ul.nested li a {
+  color: var(--grey);
+  font-weight: normal;
+}
+
+aside ul.nested li a:hover {
+  color: var(--black);
+}

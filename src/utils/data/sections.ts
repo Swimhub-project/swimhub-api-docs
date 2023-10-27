@@ -8,7 +8,8 @@ export const sections: SectionData[] = [
     name: 'Introduction',
     description: `The Swimhub API is organised around REST,
     using resource-orientated URLs. It uses standard HTTP 
-    response codes and verbs. All responses return as JSON objects`,
+    response codes and verbs. All responses return as JSON objects. 
+    The base url is https://swimhub-production.up.railway.app`,
   },
   {
     id: 'errors',

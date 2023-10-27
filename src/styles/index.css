@@ -1,3 +1,19 @@
+@import url(./components/sidenav.css);
+@import url(./components/header.css);
+@import url(./components/footer.css);
+
+:root {
+  --grey: rgb(105, 115, 134);
+  --black: rgb(42, 47, 69);
+  --light-grey: rgb(135, 146, 162);
+  --blue: rgb(85, 108, 214);
+  --border: rgb(227, 232, 238);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 *,
 *::before,
 *::after {
@@ -7,4 +23,68 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 250px auto;
+}
+
+h1,
+h2 {
+  color: var(--black);
+}
+
+p,
+span {
+  color: rgb(79, 86, 107);
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--blue);
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--black);
+}
+
+section {
+  border-bottom: 0.5px solid var(--border);
+  padding: 2em;
+}
+
+article {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 0.5px solid var(--border);
+  padding: 2em 0;
+  gap: 2em;
+}
+
+article:last-of-type {
+  border-bottom: none;
+}
+
+article li {
+  border-top: 0.5px solid var(--border);
+  padding-bottom: 0.5em;
+}
+
+article li p {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+article li p span {
+  font-weight: normal;
 }

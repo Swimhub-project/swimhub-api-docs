@@ -8,12 +8,14 @@ const App = () => {
   return (
     <>
       <Header />
-      <SideNav />
-      <main>
-        {sections.map((section, index) => (
-          <Section key={index} data={section} />
-        ))}
-      </main>
+      <div className="content">
+        <SideNav />
+        <main>
+          {sections.map((section, index) => (
+            <Section key={index} data={section} />
+          ))}
+        </main>
+      </div>
       <Footer />
     </>
   );

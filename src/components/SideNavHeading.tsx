@@ -7,11 +7,9 @@ interface Props {
 const SideNavHeading = ({ data }: Props) => {
   return (
     <li>
-      <ul>
-        <a href={`#${data.id}`}>{data.name}</a>
-      </ul>
+      <a href={`#${data.id}`}>{data.name}</a>
       {(data.objects || data.endpoints) && (
-        <ul>
+        <ul className="nested">
           {data.objects &&
             data.objects.map((item) => (
               <li>

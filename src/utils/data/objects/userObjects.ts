@@ -37,6 +37,42 @@ export const userObjAdmin: ObjectData = {
       see <a href='#user_roles'>User Roles</a>`,
       type: 'UserRole',
     },
+    {
+      name: 'status',
+      description: `Assigned user status. For more info on statuses, 
+      see <a href='#user_status'>User Status</a>`,
+      type: 'UserStatus',
+    },
+    {
+      name: 'created_on',
+      description: `Date the account was created.`,
+      type: 'DateTime',
+    },
+    {
+      name: 'updated_on',
+      description: `Date the account was last updated.`,
+      type: 'DateTime',
+    },
+    {
+      name: 'is_teacher',
+      description: `Boolean value. Users with Teacher status have additional privaledges.`,
+      type: 'boolean',
+    },
+    {
+      name: 'bio',
+      description: `Bio that displays on user's profile if made public.`,
+      type: 'string',
+    },
+    {
+      name: 'is_bio_public',
+      description: `Boolean value. If true, user bio is visible to all users.`,
+      type: 'boolean',
+    },
+    {
+      name: 'moderator_notes',
+      description: `Notes created by moderators and admins relating to user.`,
+      type: 'strings array',
+    },
   ],
   exampleObj: 'asd', //TODO fill out example object
 };
@@ -75,6 +111,12 @@ export const userObjStripped: ObjectData = {
       description: `Assigned user role. For more info on roles, 
       see <a href='#user_roles'>User Roles</a>`,
       type: 'UserRole',
+    },
+    {
+      name: 'status',
+      description: `Assigned user status. For more info on statuses, 
+      see <a href='#user_status'>User Status</a>`,
+      type: 'UserStatus',
     },
   ],
   exampleObj: 'asd', //TODO fill out example object
