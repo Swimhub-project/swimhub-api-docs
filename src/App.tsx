@@ -1,3 +1,5 @@
+import Footer from './components/Footer';
+import Header from './components/Header';
 import Section from './components/Section';
 import SideNav from './components/SideNav';
 import { sections } from './utils/data/sections';
@@ -5,14 +7,14 @@ import { sections } from './utils/data/sections';
 const App = () => {
   return (
     <>
-      <h1>Swimhub API reference documentation</h1>
-      <p>Written by Warren Hawker</p>
+      <Header />
       <SideNav />
       <main>
         {sections.map((section, index) => (
           <Section key={index} data={section} />
         ))}
       </main>
+      <Footer />
     </>
   );
 };
