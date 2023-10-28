@@ -3,6 +3,7 @@ export type Attribute = {
   type: string;
   description: string;
   childAttributes?: Attribute[];
+  required: boolean;
 };
 
 export type ObjectData = {

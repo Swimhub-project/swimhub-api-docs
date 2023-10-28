@@ -1,4 +1,4 @@
-import { sections } from '../utils/data/sections';
+import { sections } from '../../utils/data/sections';
 import SideNavHeading from './SideNavHeading';
 
 const SideNav = () => {

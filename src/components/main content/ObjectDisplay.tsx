@@ -1,4 +1,4 @@
-import { ObjectData } from '../utils/types/objectType';
+import { ObjectData } from '../../utils/types/objectType';
 
 interface Props {
   data: ObjectData;
@@ -6,7 +6,7 @@ interface Props {
 
 const ObjectDisplay = ({ data }: Props) => {
   return (
-    <article id={data.id}>
+    <article id={data.id} className="object-article">
       <h2>{data.name}</h2>
       <div>
         <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
@@ -18,6 +18,7 @@ const ObjectDisplay = ({ data }: Props) => {
                 <p>
                   {item.name} <span>{item.type}</span>
                 </p>
+                <p className="required">{item.required ? 'REQUIRED' : ''}</p>
                 <div
                   dangerouslySetInnerHTML={{ __html: item.description }}
                 ></div>

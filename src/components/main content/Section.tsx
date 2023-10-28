@@ -1,6 +1,8 @@
-import { SectionData } from '../utils/types/sectionType';
+import { SectionData } from '../../utils/types/sectionType';
 import EndpointDisplay from './EndpointDisplay';
+import ErrorAttributeDisplay from './ErrorAttributeDisplay';
 import ObjectDisplay from './ObjectDisplay';
+import TypeDisplay from './TypeDisplay';
 
 interface Props {
   data: SectionData;
@@ -25,6 +27,18 @@ const Section = ({ data }: Props) => {
             ))}
           </div>
         )}
+
+        {data.codes && (
+          <div className="object-display">
+            <h3>HTTP STATUS CODE SUMMARY</h3>
+            {data.codes.map((item, index) => (
+              <div key={index} className="error-codes">
+                <p>{item.name}</p>
+                <p>{item.description}</p>
+              </div>
+            ))}
+          </div>
+        )}
       </article>
 
       {data.objects &&
@@ -35,6 +49,12 @@ const Section = ({ data }: Props) => {
         data.endpoints.map((item, index) => (
           <EndpointDisplay key={index} data={item} />
         ))}
+      {data.types &&
+        data.types.map((item, index) => (
+          <TypeDisplay key={index} data={item} />
+        ))}
+
+      {data.attributes && <ErrorAttributeDisplay data={data.attributes} />}
     </section>
   );
 };

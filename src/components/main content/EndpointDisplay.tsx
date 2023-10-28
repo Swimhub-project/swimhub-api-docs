@@ -1,5 +1,5 @@
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { EndpointData } from '../utils/types/endpointType';
+import { EndpointData } from '../../utils/types/endpointType';
 import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 interface Props {
@@ -8,13 +8,13 @@ interface Props {
 
 const EndpointDisplay = ({ data }: Props) => {
   return (
-    <article id={data.id}>
-      <div>
+    <article id={data.id} className="endpoint-article">
+      <div className="col-left">
         <h2>{data.name}</h2>
         <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
         {data.urlParams && (
           <div>
-            <h3>URL Params</h3>
+            <h3>URL Parameters</h3>
             <ul>
               {data.urlParams.map((item) => (
                 <li>
@@ -30,7 +30,7 @@ const EndpointDisplay = ({ data }: Props) => {
         )}
         {data.bodyParams && (
           <div>
-            <h3>Body Params</h3>
+            <h3>Body Parameters</h3>
             <ul>
               {data.bodyParams.map((item) => (
                 <li>
@@ -41,12 +41,16 @@ const EndpointDisplay = ({ data }: Props) => {
                   <p className="required">
                     {item.required ? 'REQUIRED' : 'optional'}
                   </p>
-                  <p>{item.description}</p>
+                  <p className="normal">{item.description}</p>
                 </li>
               ))}
             </ul>
           </div>
         )}
+        <div className="returns">
+          <h3>Returns</h3>
+          <div dangerouslySetInnerHTML={{ __html: data.returns }}></div>
+        </div>
       </div>
       <div className="col-right">
         <div>

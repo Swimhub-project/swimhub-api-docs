@@ -49,29 +49,28 @@ export const userEndpoints: EndpointData[] = [
     A common source of error is missing or invalid body parameters. 
     The error object will contain an array with the affected body parameters.`,
     exampleReq: `const response = await fetch('https://swimhub-production.up.railway.app/user/signup', 
-    {
-      headers: {
-        "content-type": "application/json"
-      }
-      method: "POST",
-      body: JSON.stringify({
-        name: "joe bloggs",
-        email: "joe435@mail.com",
-        password: "hello123Hi?",
-        repeatPassword: "hello123Hi?",
-      })
-    })
-    `,
+  {
+    headers: {
+      "content-type": "application/json"
+    },
+    method: "POST",
+    body: JSON.stringify({
+      name: "joe bloggs",
+      email: "joe435@mail.com",
+      password: "hello123Hi?",
+      repeatPassword: "hello123Hi?",
+    }),
+  });`,
     exampleRes: `{
-      "id": "clo71e78x0000mc0olvreol2q",
-      "name": "joe bloggs",
-      "user_name": "",
-      "email": joe435@mail.com,
-      "role": user,
-      "is_teacher": false,
-      "bio": "",
-      "is_bio_public": false,
-    }`,
+    "id": "clo71e78x0000mc0olvreol2q",
+    "name": "joe bloggs",
+    "user_name": "",
+    "email": joe435@mail.com,
+    "role": user,
+    "is_teacher": false,
+    "bio": "",
+    "is_bio_public": false,
+}`,
   },
   //sign in user POST request
   {
@@ -100,8 +99,27 @@ export const userEndpoints: EndpointData[] = [
     signin with a 200 status code. Returns an error if something goes wrong. 
     A common source of error is missing or invalid body parameters. 
     The error object will contain an array with the affected body parameters.`,
-    exampleReq: 'asdf', //TODO fill out example fetch request
-    exampleRes: 'asd', //TODO fill out example fetch response
+    exampleReq: `const response = await fetch('https://swimhub-production.up.railway.app/user/signin', 
+  {
+    headers: {
+      "content-type": "application/json"
+    },
+    method: "POST",
+    body: JSON.stringify({
+      email: "joe435@mail.com",
+      password: "hello123Hi?",
+    }),
+  });`,
+    exampleRes: `{
+      "id": "clo71e78x0000mc0olvreol2q",
+      "name": "joe bloggs",
+      "user_name": "",
+      "email": joe435@mail.com,
+      "role": user,
+      "is_teacher": false,
+      "bio": "",
+      "is_bio_public": false,
+  }`,
   },
   //request password reset POST request
   {
@@ -121,12 +139,29 @@ export const userEndpoints: EndpointData[] = [
         type: 'string',
       },
     ],
-    returns: `Returns the stripped-down User object on successful 
-    signin with a 200 status code. Returns an error if something goes wrong. 
+    returns: `Returns a 200 status code if successful. Returns an error if something goes wrong. 
     A common source of error is missing or invalid body parameters. 
     The error object will contain an array with the affected body parameters.`,
-    exampleReq: 'asdf', //TODO fill out example fetch request
-    exampleRes: 'asd', //TODO fill out example fetch response
+    exampleReq: `const response = await fetch('https://swimhub-production.up.railway.app/user/reset_password', 
+  {
+    headers: {
+      "content-type": "application/json"
+    },
+    method: "POST",
+    body: JSON.stringify({
+      email: "joe435@mail.com",
+    }),
+  });`,
+    exampleRes: `{
+      "id": "clo71e78x0000mc0olvreol2q",
+      "name": "joe bloggs",
+      "user_name": "",
+      "email": joe435@mail.com,
+      "role": user,
+      "is_teacher": false,
+      "bio": "",
+      "is_bio_public": false,
+  }`,
   },
   //resend email verification POST request
   {
@@ -147,9 +182,8 @@ export const userEndpoints: EndpointData[] = [
         type: 'string',
       },
     ],
-    returns: `Returns the stripped-down User object on successful account creation 
-    with a 201 status code. Returns an error if something goes wrong. 
-    A common source of error is missing or invalid body parameters. 
+    returns: `Returns a 200 status code if successful. Returns an error if something goes wrong. 
+    A common source of error is missing or invalid body parameters, or if the user has already been verified. 
     The error object will contain an array with the affected body parameters.`,
     exampleReq: 'asdf', //TODO fill out example fetch request
     exampleRes: 'asd', //TODO fill out example fetch response
