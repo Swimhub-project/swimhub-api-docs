@@ -15,28 +15,34 @@ const Section = ({ data }: Props) => {
         <h1>{data.name}</h1>
         <div>
           <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
+          {data.attributes && <ErrorAttributeDisplay data={data.attributes} />}
         </div>
 
         {data.endpoints && (
           <div className="object-display">
             <h3>ENDPOINTS</h3>
-            {data.endpoints.map((item, index) => (
-              <div key={index}>
-                <span>{item.method}</span> <span>{item.url}</span>
-              </div>
-            ))}
+            <div className="object-display-inner">
+              {data.endpoints.map((item) => (
+                <>
+                  <span className="name">{item.method}</span>
+                  <span className="type">{item.url}</span>
+                </>
+              ))}
+            </div>
           </div>
         )}
 
         {data.codes && (
           <div className="object-display">
             <h3>HTTP STATUS CODE SUMMARY</h3>
-            {data.codes.map((item, index) => (
-              <div key={index} className="error-codes">
-                <p>{item.name}</p>
-                <p>{item.description}</p>
-              </div>
-            ))}
+            <div className="object-display-inner">
+              {data.codes.map((item) => (
+                <>
+                  <span className="name">{item.name}</span>
+                  <span className="type">{item.description}</span>
+                </>
+              ))}
+            </div>
           </div>
         )}
       </article>
@@ -53,8 +59,6 @@ const Section = ({ data }: Props) => {
         data.types.map((item, index) => (
           <TypeDisplay key={index} data={item} />
         ))}
-
-      {data.attributes && <ErrorAttributeDisplay data={data.attributes} />}
     </section>
   );
 };

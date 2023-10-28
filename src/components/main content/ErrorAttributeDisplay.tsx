@@ -6,17 +6,13 @@ interface Props {
 
 const ErrorAttributeDisplay = ({ data }: Props) => {
   return (
-    <article>
-      <h3>Attributes</h3>
+    <article className="attributes">
+      <h2>Attributes</h2>
       <ul>
         {data.map((item, index) => (
           <li key={index}>
-            {
-              <p>
-                {item.name}
-                <span>{item.type}</span>
-              </p>
-            }
+            <span className="name">{item.name}</span>
+            <span className="type">{item.type}</span>
             <p className="required">{item.required ? 'REQUIRED' : ''}</p>
             <div dangerouslySetInnerHTML={{ __html: item.description }}></div>
           </li>

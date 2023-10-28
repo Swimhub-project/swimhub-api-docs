@@ -9,8 +9,8 @@ interface Props {
 const EndpointDisplay = ({ data }: Props) => {
   return (
     <article id={data.id} className="endpoint-article">
+      <h2>{data.name}</h2>
       <div className="col-left">
-        <h2>{data.name}</h2>
         <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
         {data.urlParams && (
           <div>
@@ -18,11 +18,12 @@ const EndpointDisplay = ({ data }: Props) => {
             <ul>
               {data.urlParams.map((item) => (
                 <li>
-                  <p>
-                    {item.name}
-                    <span>{item.type}</span>
-                  </p>
-                  <p>{item.description}</p>
+                  <span className="name">{item.name}</span>
+                  <span className="type">{item.type}</span>
+                  <p className="required">{item.required ? 'REQUIRED' : ''}</p>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: item.description }}
+                  ></div>
                 </li>
               ))}
             </ul>
@@ -34,14 +35,12 @@ const EndpointDisplay = ({ data }: Props) => {
             <ul>
               {data.bodyParams.map((item) => (
                 <li>
-                  <p>
-                    {item.name}
-                    <span>{item.type}</span>
-                  </p>
-                  <p className="required">
-                    {item.required ? 'REQUIRED' : 'optional'}
-                  </p>
-                  <p className="normal">{item.description}</p>
+                  <span className="name">{item.name}</span>
+                  <span className="type">{item.type}</span>
+                  <p className="required">{item.required ? 'REQUIRED' : ''}</p>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: item.description }}
+                  ></div>
                 </li>
               ))}
             </ul>
@@ -65,7 +64,9 @@ const EndpointDisplay = ({ data }: Props) => {
         </div>
         <div className="object-display">
           <h3>Response</h3>
-          <pre>{data.exampleRes}</pre>
+          <div className="object-display-inner">
+            <pre>{data.exampleRes}</pre>
+          </div>
         </div>
       </div>
     </article>

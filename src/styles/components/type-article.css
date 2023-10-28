@@ -1,0 +1,19 @@
+.type-article h2 span {
+  margin-left: 1em;
+}
+
+.type-article .inner-heading {
+  margin: 1em 0;
+}
+
+.enum-values ul {
+  list-style-type: disc;
+  padding-left: 2em;
+}
+
+.enum-values li {
+  border: none;
+  list-style: initial;
+  font-size: 14px;
+  color: var(--grey);
+}

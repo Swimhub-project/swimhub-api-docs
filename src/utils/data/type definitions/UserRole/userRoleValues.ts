@@ -4,7 +4,7 @@ export const userRoleValues: EnumValues[] = [
   {
     id: 'userRole_user',
     name: 'user',
-    description: `Users can perform the following actions:
+    description: `<p>Users can perform the following actions:</p>
     <ul>
       <li>Add new entries</li>
       <li>Edit their own entries</li>
@@ -24,8 +24,8 @@ export const userRoleValues: EnumValues[] = [
   {
     id: 'userRole_moderator',
     name: 'moderator',
-    description: `Moderators can perform the following actions 
-    (in addition to User permissions):
+    description: `<p>Moderators can perform the following actions 
+    (in addition to User permissions):</p>
     <ul>
       <li>View and respond to reports</li>
       <li>View and respond to support tickets</li>
@@ -37,8 +37,8 @@ export const userRoleValues: EnumValues[] = [
   {
     id: 'userRole_admin',
     name: 'admin',
-    description: `Admins can perform the following actions 
-    (in addition to Moderator permissions):
+    description: `<p>Admins can perform the following actions 
+    (in addition to Moderator permissions):</p>
     <ul>
       <li>Permanently delete entries, comments and replies</li>
       <li>Add new moderators</li>

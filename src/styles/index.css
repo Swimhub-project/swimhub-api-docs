@@ -2,15 +2,11 @@
 @import url(./components/header.css);
 @import url(./components/footer.css);
 @import url(./components/object.css);
-
-:root {
-  --grey: rgb(105, 115, 134);
-  --black: rgb(42, 47, 69);
-  --light-grey: rgb(135, 146, 162);
-  --blue: rgb(85, 108, 214);
-  --border: rgb(227, 232, 238);
-  --red: rgb(229, 111, 74);
-}
+@import url(./abstracts/colors.css);
+@import url(./abstracts/text.css);
+@import url(./components/attributes.css);
+@import url(./components/type-article.css);
+@import url(./components/endpoint-article.css);
 
 html {
   scroll-behavior: smooth;
@@ -24,7 +20,6 @@ html {
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 aside nav {
@@ -36,43 +31,12 @@ aside nav {
   grid-template-columns: 250px auto;
 }
 
-h1,
-h2 {
-  color: var(--black);
-}
-
-p {
-  color: rgb(79, 86, 107);
-}
-
-h1 {
-  font-size: 24px;
-}
-
-h2 {
-  font-size: 20px;
-}
-
-h3 {
-  font-size: 18px;
-}
-
 ul {
   padding-left: 0;
 }
 
 li {
   list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: var(--blue);
-  font-weight: bold;
-}
-
-a:hover {
-  color: var(--black);
 }
 
 section {
@@ -103,16 +67,6 @@ article li {
   padding-bottom: 0.5em;
 }
 
-article li p {
-  font-weight: bold;
-  margin-bottom: 0.5em;
-}
-
-article li p span {
-  font-weight: normal;
-  margin-left: 0.5em;
-}
-
 .required {
   margin-top: 0;
   color: var(--red);
@@ -126,12 +80,6 @@ article li p span {
   display: flex;
   flex-direction: column;
   gap: 2em;
-}
-
-.normal {
-  font-weight: normal;
-  margin-top: 0.5em;
-  font-size: 14px;
 }
 
 .returns {

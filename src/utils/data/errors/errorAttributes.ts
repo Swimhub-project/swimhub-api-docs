@@ -4,20 +4,20 @@ export const errorAttributes: ErrorAttribute[] = [
   {
     name: 'code',
     type: 'number',
-    description: 'Error code indicating the type of error.',
+    description: '<p>Error code indicating the type of error.</p>',
     required: true,
   },
   {
     name: 'message',
     type: 'string',
-    description: 'message providing more details on the error.',
+    description: '<p>Message providing more details on the error.</p>',
     required: true,
   },
   {
     name: 'params',
-    type: 'strings array',
-    description: `If the error is parameter-specific, the array contains
-    the list of affected parameters.`,
+    type: 'array of strings',
+    description: `<p>If the error is parameter-specific, the array contains
+    the list of affected parameters.</p>`,
     required: false,
   },
 ];

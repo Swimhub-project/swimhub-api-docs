@@ -3,86 +3,87 @@ import { ObjectData } from '../../types/objectType';
 export const userObjAdmin: ObjectData = {
   id: 'user_object_admin',
   name: 'User object admin',
-  description: `User object accessible to moderators and admins. 
+  description: `<p>User object accessible to moderators and admins. 
   Will be returned from endpoints that are only accessible to moderators
   and admins. For the stripped down User object, see 
-  <a href='#user_object_stripped'>User object stripped</a>.`,
+  <a href='#user_object_stripped'>User object stripped</a>.</p>`,
   attributes: [
     //TODO add additional attributes for admin user object
     {
       name: 'id',
-      description: 'Unique User ID automatically assigned from database',
+      description:
+        '<p>Unique User ID automatically assigned from database.</p>',
       type: 'string',
       required: true,
     },
     {
       name: 'name',
-      description: `Name provided by the user when creating the account. 
-                    This is not publicly visible.`,
+      description: `<p>Name provided by the user when creating the account. 
+      This is not publicly visible.</p>`,
       type: 'string',
       required: true,
     },
     {
       name: 'user_name',
-      description: 'publicly viewable user name.',
+      description: '<p>publicly viewable user name.</p>',
       type: 'string',
       required: false,
     },
     {
       name: 'email',
       description:
-        'Unique email provided by the user when creating the account.',
+        '<p>Unique email provided by the user when creating the account.</p>',
       type: 'string',
       required: true,
     },
     {
       name: 'role',
-      description: `Assigned user role. For more info on roles, 
-      see <a href='#user_roles'>User Roles</a>`,
+      description: `<p>Assigned user role. For type definition, 
+      see <a href='#userRole'>UserRole</a></p>`,
       type: 'UserRole',
       required: true,
     },
     {
       name: 'status',
-      description: `Assigned user status. For more info on statuses, 
-      see <a href='#user_status'>User Status</a>`,
+      description: `<p>Assigned user status. For type definition, 
+      see <a href='#userStatus'>UserStatus</a></p>`,
       type: 'UserStatus',
       required: true,
     },
     {
       name: 'created_on',
-      description: `Date the account was created.`,
+      description: `<p>Date the account was created.</p>`,
       type: 'DateTime',
       required: true,
     },
     {
       name: 'updated_on',
-      description: `Date the account was last updated.`,
+      description: `<p>Date the account was last updated.</p>`,
       type: 'DateTime',
       required: false,
     },
     {
       name: 'is_teacher',
-      description: `Boolean value. Users with Teacher status have additional privaledges.`,
+      description: `<p>Boolean value. Users with Teacher status have additional privaledges.</p>`,
       type: 'boolean',
       required: true,
     },
     {
       name: 'bio',
-      description: `Bio that displays on user's profile if made public.`,
+      description: `<p>Bio that displays on user's profile if made public.</p>`,
       type: 'string',
       required: true,
     },
     {
       name: 'is_bio_public',
-      description: `Boolean value. If true, user bio is visible to all users.`,
+      description: `<p>Boolean value. If true, user bio is visible to all users.</p>`,
       type: 'boolean',
       required: true,
     },
     {
       name: 'moderator_notes',
-      description: `Notes created by moderators and admins relating to user.`,
-      type: 'array of JSON objects',
+      description: `<p>Notes created by moderators and admins relating to user. For type definition, see <a href="#moderatorNote">ModeratorNote</a></p>`,
+      type: 'ModeratorNote',
       required: false,
     },
   ],
@@ -105,58 +106,58 @@ export const userObjAdmin: ObjectData = {
 export const userObjStripped: ObjectData = {
   id: 'user_object_stripped',
   name: 'User object stripped',
-  description: `A stripped down User object accessible to logged-in users, returned from 
+  description: `<p>A stripped down User object accessible to logged-in users, returned from 
   most endpoints. Contains less information than the 
-  <a href='#user_object_admin'>User object admin</a>`,
+  <a href='#user_object_admin'>User object admin</a>.</p>`,
   attributes: [
     {
       name: 'id',
-      description: 'Unique User ID automatically assigned from database',
+      description: `<p>Unique User ID automatically assigned from database</p>`,
       type: 'string',
       required: true,
     },
     {
       name: 'name',
-      description: `Name provided by the user when creating the account. 
-                    This is not publicly visible.`,
+      description: `<p>Name provided by the user when creating the account. 
+      This is not publicly visible.</p>`,
       type: 'string',
       required: true,
     },
     {
       name: 'user_name',
-      description: 'publicly viewable user name.',
+      description: '<p>publicly viewable user name.</p>',
       type: 'string',
       required: false,
     },
     {
       name: 'email',
       description:
-        'Unique email provided by the user when creating the account.',
+        '<p>Unique email provided by the user when creating the account.</p>',
       type: 'string',
       required: true,
     },
     {
       name: 'role',
-      description: `Assigned user role. For more info on roles, 
-      see <a href='#user_roles'>User Roles</a>`,
+      description: `<p>Assigned user role. For more info on roles, 
+      see <a href='#userRole'>User Roles</a>.</p>`,
       type: 'UserRole',
       required: true,
     },
     {
       name: 'is_teacher',
-      description: `Boolean value. Users with Teacher status have additional privaledges.`,
+      description: `<p>Boolean value. Users with Teacher status have additional privaledges.</p>`,
       type: 'boolean',
       required: true,
     },
     {
       name: 'bio',
-      description: `Bio that displays on user's profile if made public.`,
+      description: `<p>Bio that displays on user's profile if made public.</p>`,
       type: 'string',
       required: true,
     },
     {
       name: 'is_bio_public',
-      description: `Boolean value. If true, user bio is visible to all users.`,
+      description: `<p>Boolean value. If true, user bio is visible to all users.</p>`,
       type: 'boolean',
       required: true,
     },

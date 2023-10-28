@@ -1,0 +1,12 @@
+.attributes {
+  display: block;
+}
+
+.attributes li {
+  margin: 0.5em 0;
+  padding: 0.5em 0;
+}
+
+.attribute-description {
+  margin-top: 0.5em;
+}
