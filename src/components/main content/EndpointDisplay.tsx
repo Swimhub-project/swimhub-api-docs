@@ -9,7 +9,15 @@ interface Props {
 const EndpointDisplay = ({ data }: Props) => {
   return (
     <article id={data.id} className="endpoint-article">
-      <h2>{data.name}</h2>
+      <div className="col-full">
+        <h2>{data.name}</h2>
+        <p>
+          URL: <strong>{data.url}</strong>
+        </p>
+        <p>
+          Available to <strong>{data.availableTo}</strong>
+        </p>
+      </div>
       <div className="col-left">
         <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
         {data.urlParams && (

@@ -16,12 +16,18 @@ export const errorValues: ErrorCode[] = [
   },
   {
     name: '401 - Unauthorized',
-    description: `User is trying to use an endpoint they don't have
-    access to.`,
+    description: `Session token is invalid or incorrect request headers.`,
   },
   {
-    name: '200 - OK',
-    description: `Everything worked as expected.`,
+    name: '403 - Forbidden',
+    description: `User is trying to use an endpoint they don't have 
+    permissions for.`,
+  },
+  {
+    name: '409 - Conflict',
+    description: `The server couldn't complete the action due to a 
+    conflict, for example a user with the same email address already
+    exists.`,
   },
   {
     name: '429 - Too Many Requests',
@@ -29,7 +35,7 @@ export const errorValues: ErrorCode[] = [
     We recommend an exponential backoff of your requests.`,
   },
   {
-    name: '500, 502, 503, 504 - Server Errors	',
+    name: '500 - Server Error',
     description: `Something went wrong on the server. (These are rare.)`,
   },
 ];
