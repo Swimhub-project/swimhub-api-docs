@@ -8,7 +8,6 @@ export const userObjAdmin: ObjectData = {
   and admins. For the stripped down User object, see 
   <a href='#user_object_stripped'>User object stripped</a>.</p>`,
   attributes: [
-    //TODO add additional attributes for admin user object
     {
       name: 'id',
       description:
@@ -141,6 +140,13 @@ export const userObjStripped: ObjectData = {
       description: `<p>Assigned user role. For more info on roles, 
       see <a href='#userRole'>User Roles</a>.</p>`,
       type: 'UserRole',
+      required: true,
+    },
+    {
+      name: 'status',
+      description: `<p>Assigned user status. For type definition, 
+      see <a href='#userStatus'>UserStatus</a></p>`,
+      type: 'UserStatus',
       required: true,
     },
     {
