@@ -1,4 +1,5 @@
 import { SectionData } from '../types/sectionType';
+import { authEndpoints } from './endpoints/authEndpoints';
 import { userEndpoints } from './endpoints/userEndpoints';
 import { errorAttributes } from './errors/errorAttributes';
 import { errorValues } from './errors/errorValues';
@@ -38,6 +39,13 @@ export const sections: SectionData[] = [
     `,
     objects: [userObjAdmin, userObjStripped],
     endpoints: userEndpoints,
+  },
+  {
+    id: 'auth',
+    name: 'Auth',
+    description: `<p>Auth endpoints are related to user authentication,
+    including signing up, signing in, email verification and password resets.</p>`,
+    endpoints: authEndpoints,
   },
   {
     id: 'types',
