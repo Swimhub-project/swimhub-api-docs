@@ -1,9 +1,12 @@
 import { SectionData } from '../types/sectionType';
 import { authEndpoints } from './endpoints/authEndpoints';
+import { sessionEndpoints } from './endpoints/sessionEndpoints';
 import { userEndpoints } from './endpoints/userEndpoints';
 import { errorAttributes } from './errors/errorAttributes';
 import { errorValues } from './errors/errorValues';
+import { sessionObj } from './objects/sessionObjects';
 import { userObjAdmin, userObjStripped } from './objects/userObjects';
+import { paginationAttributes } from './pagination/paginationAttributes';
 import { userRoleDefinition } from './type definitions/UserRole/userRole';
 import { userStatusDefinition } from './type definitions/UserStatus/userStatus';
 import { moderatorNoteDefinition } from './type definitions/moderatorNote/moderatorNote';
@@ -16,6 +19,18 @@ export const sections: SectionData[] = [
     using resource-orientated URLs. It uses standard HTTP 
     response codes and verbs. All responses return as JSON objects. <br/><br/>
     The base url for all endpoints is: <br/><strong>https://swimhub-production.up.railway.app</strong></p>`,
+  },
+  {
+    id: 'pagination',
+    name: 'Pagination',
+    description: `<p>All GET requests that can return multiple objects are subject
+    to page pagination. The maximum number of items retrieved by a GET request
+    is 10. If you wish to fetch fewer than 10 items, you can specify this in 
+    the "limit" search parameter.</p> <br/>
+    <p>All paginated requests will contain metadata to help you make follow-up
+    requests. Use the "page" search parameter to get different sets of paginated
+    results that meet the search criteria.</p>`,
+    attributes: paginationAttributes,
   },
   {
     id: 'errors',
@@ -46,6 +61,15 @@ export const sections: SectionData[] = [
     description: `<p>Auth endpoints are related to user authentication,
     including signing up, signing in, email verification and password resets.</p>`,
     endpoints: authEndpoints,
+  },
+  {
+    id: 'sessions',
+    name: 'Sessions',
+    description: `<p>Sessions are stored on the server and are used to authenticate 
+    users for protected endpoints. Admins can view sessions and delete specific 
+    sessions, forcing the user to re-authenticate before accessing any protected routes.</p>`,
+    objects: [sessionObj],
+    endpoints: sessionEndpoints,
   },
   {
     id: 'types',

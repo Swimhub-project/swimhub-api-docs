@@ -22,6 +22,7 @@ export type EndpointData = {
   description: string;
   urlParams?: Params[];
   bodyParams?: Params[];
+  searchParams?: Params[];
   returns: string;
   exampleReq: string;
   exampleRes: string;

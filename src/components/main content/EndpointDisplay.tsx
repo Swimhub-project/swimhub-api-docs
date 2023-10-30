@@ -54,6 +54,23 @@ const EndpointDisplay = ({ data }: Props) => {
             </ul>
           </div>
         )}
+        {data.searchParams && (
+          <div>
+            <h3>Search Parameters</h3>
+            <ul>
+              {data.searchParams.map((item) => (
+                <li>
+                  <span className="name">{item.name}</span>
+                  <span className="type">{item.type}</span>
+                  <p className="required">{item.required ? 'REQUIRED' : ''}</p>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: item.description }}
+                  ></div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         <div className="returns">
           <h3>Returns</h3>
           <div dangerouslySetInnerHTML={{ __html: data.returns }}></div>

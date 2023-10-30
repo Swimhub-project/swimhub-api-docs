@@ -8,7 +8,7 @@ export const authEndpoints: EndpointData[] = [
     method: 'POST',
     url: '/auth/signup',
     availableTo: 'everyone',
-    description: `<p>creates a new user in the database. 
+    description: `<p>Creates a new user in the database. 
       On successful creation, an automated email is sent to the user's 
       email address with the email verification link. This link lasts 
       24 hours then expires. The user status is set to "inactive" and no actions
@@ -48,7 +48,8 @@ export const authEndpoints: EndpointData[] = [
     with a 201 status code. Returns an error if something goes wrong. 
     A common source of error is missing or invalid body parameters. 
     The error object will contain an array with the affected body parameters.</p>`,
-    exampleReq: `const response = await fetch('https://swimhub-production.up.railway.app/auth/signup', 
+    exampleReq: `const response = await fetch(
+  'https://swimhub-production.up.railway.app/auth/signup', 
   {
     headers: {
       "content-type": "application/json"
@@ -60,7 +61,12 @@ export const authEndpoints: EndpointData[] = [
       password: "hello123Hi?",
       repeatPassword: "hello123Hi?",
     }),
-  });`,
+  }
+);
+
+const data = await response.json();
+console.log(data);
+`,
     exampleRes: `{
     "id": "clo71e78x0000mc0olvreol2q",
     "name": "joe bloggs",
@@ -99,7 +105,8 @@ export const authEndpoints: EndpointData[] = [
     signin with a 200 status code. Returns an error if something goes wrong. 
     A common source of error is missing or invalid body parameters. 
     The error object will contain an array with the affected body parameters.</p>`,
-    exampleReq: `const response = await fetch('https://swimhub-production.up.railway.app/auth/signin', 
+    exampleReq: `const response = await fetch(
+  'https://swimhub-production.up.railway.app/auth/signin', 
   {
     headers: {
       "content-type": "application/json"
@@ -109,7 +116,12 @@ export const authEndpoints: EndpointData[] = [
       email: "joe435@mail.com",
       password: "hello123Hi?",
     }),
-  });`,
+  }
+);
+  
+const data = await response.json();
+console.log(data);
+  `,
     exampleRes: `{
       "id": "clo71e78x0000mc0olvreol2q",
       "name": "joe bloggs",
@@ -142,7 +154,8 @@ export const authEndpoints: EndpointData[] = [
     returns: `<p>Returns a 200 status code if successful. Returns an error if something goes wrong. 
     A common source of error is missing or invalid body parameters. 
     The error object will contain an array with the affected body parameters.</p>`,
-    exampleReq: `const response = await fetch('https://swimhub-production.up.railway.app/auth/reset_password', 
+    exampleReq: `const response = await fetch(
+  'https://swimhub-production.up.railway.app/auth/reset_password', 
   {
     headers: {
       "content-type": "application/json"
@@ -151,7 +164,9 @@ export const authEndpoints: EndpointData[] = [
     body: JSON.stringify({
       email: "joe435@mail.com",
     }),
-  });`,
+  }
+);
+`,
     exampleRes: ``,
   },
   //resend email verification POST request
@@ -176,7 +191,8 @@ export const authEndpoints: EndpointData[] = [
     returns: `<p>Returns a 200 status code if successful. Returns an error if something goes wrong. 
     A common source of error is missing or invalid body parameters, or if the user has already been verified. 
     The error object will contain an array with the affected body parameters.</p>`,
-    exampleReq: `const response = await fetch('https://swimhub-production.up.railway.app/auth/resend_verify', 
+    exampleReq: `const response = await fetch(
+  'https://swimhub-production.up.railway.app/auth/resend_verify', 
   {
     headers: {
       "content-type": "application/json"
@@ -185,7 +201,9 @@ export const authEndpoints: EndpointData[] = [
     body: JSON.stringify({
       userId: "clo71e78x0000mc0olvreol2q",
     }),
-  });`,
+  }
+);
+`,
     exampleRes: '',
   },
 ];
