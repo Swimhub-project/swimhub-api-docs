@@ -174,6 +174,7 @@ export const userObjStripped: ObjectData = {
     "user_name": joeschmoo,
     "email": joe435@mail.com,
     "role": user,
+    "status": active,
     "is_teacher": false,
     "bio": "hi, my name is joe and I'm a swimming assistant.",
     "is_bio_public": true,
