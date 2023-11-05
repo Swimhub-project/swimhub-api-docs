@@ -1,6 +1,14 @@
+/* 
+  User Endpoints Data
+
+  All the endpoints data displayed in the Users section of the docs. 
+  Endpoints covered: 
+    GET /user
+*/
 import { EndpointData } from '../../types/endpointType';
 
 export const userEndpoints: EndpointData[] = [
+  //get users
   {
     id: 'get_users',
     name: 'Get Users',

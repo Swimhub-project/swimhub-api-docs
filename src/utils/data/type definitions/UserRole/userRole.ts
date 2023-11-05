@@ -1,3 +1,10 @@
+/* 
+ User Role Enum Data
+
+  This data describes the User Role Enum displayed in the
+  Type Definitions section. 
+*/
+
 import { EnumDefinition } from '../../../types/typeDefinitionType';
 import { userRoleValues } from './userRoleValues';
 

@@ -1,3 +1,10 @@
+/* 
+ User Status Enum Data
+
+  This data describes the User Status Enum displayed in the
+  Type Definitions section. 
+*/
+
 import { EnumDefinition } from '../../../types/typeDefinitionType';
 import { userStatusValues } from './userStatusValues';
 

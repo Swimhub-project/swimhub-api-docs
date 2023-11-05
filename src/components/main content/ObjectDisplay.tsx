@@ -22,6 +22,28 @@ const ObjectDisplay = ({ data }: Props) => {
                   className="attribute-description"
                   dangerouslySetInnerHTML={{ __html: item.description }}
                 ></div>
+                {item.childAttributes && (
+                  <div className="child-attributes">
+                    <h3>Child Attributes</h3>
+                    <ul>
+                      {item.childAttributes.map((child) => (
+                        <li>
+                          <span className="name">{child.name}</span>
+                          <span className="type">{child.type}</span>
+                          <p className="required">
+                            {child.required ? 'REQUIRED' : ''}
+                          </p>
+                          <div
+                            className="attribute-description"
+                            dangerouslySetInnerHTML={{
+                              __html: child.description,
+                            }}
+                          ></div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </li>
             ))}
           </ul>

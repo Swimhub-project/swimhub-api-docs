@@ -1,3 +1,10 @@
+/* 
+  Moderator Notes Object Properties Data
+
+  This data describes the properties for the Moderator Note object displayed in the
+  Type Definitions section. 
+*/
+
 import { ObjectProperties } from '../../../types/typeDefinitionType';
 
 export const moderatorNoteValues: ObjectProperties[] = [

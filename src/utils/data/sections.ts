@@ -1,3 +1,10 @@
+/* 
+  Sections Data
+
+  This data describes each main section of the documentation. 
+  Pulls in data from the other data files for attributes, endpoints and objects.
+*/
+
 import { SectionData } from '../types/sectionType';
 import { authEndpoints } from './endpoints/authEndpoints';
 import { sessionEndpoints } from './endpoints/sessionEndpoints';

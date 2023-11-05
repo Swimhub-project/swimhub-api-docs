@@ -1,3 +1,12 @@
+/* 
+  Session Endpoints Data
+
+  All the endpoints data displayed in the Sessions section of the docs. 
+  Endpoints covered: 
+    GET /session
+    DELETE /session/:id
+*/
+
 import { EndpointData } from '../../types/endpointType';
 
 export const sessionEndpoints: EndpointData[] = [

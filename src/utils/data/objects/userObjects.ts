@@ -1,3 +1,10 @@
+/* 
+  User Objects Data
+
+  This data describes the User objects displayed in the Users section. Includes
+  attributes and example session object for the "User Object Admin" and "User Object Stripped". 
+*/
+
 import { ObjectData } from '../../types/objectType';
 
 export const userObjAdmin: ObjectData = {

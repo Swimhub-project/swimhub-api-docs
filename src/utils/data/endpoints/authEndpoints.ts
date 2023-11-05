@@ -1,3 +1,14 @@
+/* 
+  Auth Endpoints Data
+
+  All the endpoints data displayed in the Auth section of the docs. 
+  Endpoints covered: 
+    POST /auth/signup
+    POST /auth/signin
+    POST /auth/reset_password
+    POST /auth/resend_verify 
+*/
+
 import { EndpointData } from '../../types/endpointType';
 
 export const authEndpoints: EndpointData[] = [

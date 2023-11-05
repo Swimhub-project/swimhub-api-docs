@@ -1,3 +1,10 @@
+/* 
+  Error Attributes Data
+
+  This data describes the Error object that is returned by failed API requests.
+  This is displayed in the Errors section.
+*/
+
 import { ErrorAttribute } from '../../types/errorType';
 
 export const errorAttributes: ErrorAttribute[] = [

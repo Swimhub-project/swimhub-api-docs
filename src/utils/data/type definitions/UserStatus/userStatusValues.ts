@@ -1,3 +1,10 @@
+/* 
+  User Status Enum Values Data
+
+  This data describes the possible values for the User Status Enum displayed in the
+  Type Definitions section. 
+*/
+
 import { EnumValues } from '../../../types/typeDefinitionType';
 
 export const userStatusValues: EnumValues[] = [

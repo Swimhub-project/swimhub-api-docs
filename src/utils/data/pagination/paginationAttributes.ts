@@ -1,3 +1,10 @@
+/* 
+  Pagination Attributes Data
+
+  This data describes the Pagination metadata object that is returned by paginated GET requests.
+  This is displayed in the Pagination section.
+*/
+
 import { ErrorAttribute } from '../../types/errorType';
 
 export const paginationAttributes: ErrorAttribute[] = [

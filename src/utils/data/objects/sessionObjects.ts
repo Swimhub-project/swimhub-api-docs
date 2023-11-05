@@ -1,3 +1,10 @@
+/* 
+  Session Object Data
+
+  This data describes the session object displayed in the Sessions section. Includes
+  attributes and example session object. 
+*/
+
 import { ObjectData } from '../../types/objectType';
 
 export const sessionObj: ObjectData = {

@@ -1,3 +1,10 @@
+/* 
+  Error Values Data
+
+  This data describes the different error codes returned by failed API requests.
+  This is displayed in the Errors section.
+*/
+
 import { ErrorCode } from '../../types/errorType';
 
 export const errorValues: ErrorCode[] = [

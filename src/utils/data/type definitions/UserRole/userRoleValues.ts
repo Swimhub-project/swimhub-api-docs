@@ -1,3 +1,10 @@
+/* 
+  User Role Enum Values Data
+
+  This data describes the possible values for the User Role Enum displayed in the
+  Type Definitions section. 
+*/
+
 import { EnumValues } from '../../../types/typeDefinitionType';
 
 export const userRoleValues: EnumValues[] = [
