@@ -7,13 +7,19 @@
 
 import { SectionData } from '../types/sectionType';
 import { authEndpoints } from './endpoints/authEndpoints';
+import { entryEndpoints } from './endpoints/entryEndpoints';
 import { sessionEndpoints } from './endpoints/sessionEndpoints';
 import { userEndpoints } from './endpoints/userEndpoints';
 import { errorAttributes } from './errors/errorAttributes';
 import { errorValues } from './errors/errorValues';
+import { entryObj } from './objects/entryObjects';
 import { sessionObj } from './objects/sessionObjects';
 import { userObjAdmin, userObjStripped } from './objects/userObjects';
 import { paginationAttributes } from './pagination/paginationAttributes';
+import { contentStatusDefinition } from './type definitions/ContentStatus/ContentStatus';
+import { entryStageDefinition } from './type definitions/EntryStage/entryStage';
+import { entryStrokeDefinition } from './type definitions/EntryStroke/entryStroke';
+import { entryTypeDefinition } from './type definitions/EntryType/entryType';
 import { userRoleDefinition } from './type definitions/UserRole/userRole';
 import { userStatusDefinition } from './type definitions/UserStatus/userStatus';
 import { moderatorNoteDefinition } from './type definitions/moderatorNote/moderatorNote';
@@ -79,10 +85,26 @@ export const sections: SectionData[] = [
     endpoints: sessionEndpoints,
   },
   {
+    id: 'entries',
+    name: 'Entries',
+    description: `<p>Entries are user-created swimming tips, exercises and lesson plans. Anyone can search for and fetch entries,
+    but only logged in users can create new entries or edit their own entries. Only admins can delete entries.</p>`,
+    objects: [entryObj],
+    endpoints: entryEndpoints,
+  },
+  {
     id: 'types',
     name: 'Type Definitions',
     description: `<p>The API uses Typescript, so the following type definitions are required to be 
     used for certain object properties.</p>`,
-    types: [userRoleDefinition, userStatusDefinition, moderatorNoteDefinition],
+    types: [
+      userRoleDefinition,
+      userStatusDefinition,
+      contentStatusDefinition,
+      entryTypeDefinition,
+      entryStageDefinition,
+      entryStrokeDefinition,
+      moderatorNoteDefinition,
+    ],
   },
 ];
