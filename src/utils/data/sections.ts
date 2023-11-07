@@ -16,7 +16,7 @@ import { entryObj } from './objects/entryObjects';
 import { sessionObj } from './objects/sessionObjects';
 import { userObjAdmin, userObjStripped } from './objects/userObjects';
 import { paginationAttributes } from './pagination/paginationAttributes';
-import { contentStatusDefinition } from './type definitions/ContentStatus/ContentStatus';
+import { contentStatusDefinition } from './type definitions/ContentStatus/contentStatus';
 import { entryStageDefinition } from './type definitions/EntryStage/entryStage';
 import { entryStrokeDefinition } from './type definitions/EntryStroke/entryStroke';
 import { entryTypeDefinition } from './type definitions/EntryType/entryType';
