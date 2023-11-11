@@ -8,11 +8,13 @@
 import { SectionData } from '../types/sectionType';
 import { authEndpoints } from './endpoints/authEndpoints';
 import { entryEndpoints } from './endpoints/entryEndpoints';
+import { logEndpoints } from './endpoints/logEndpoints';
 import { sessionEndpoints } from './endpoints/sessionEndpoints';
 import { userEndpoints } from './endpoints/userEndpoints';
 import { errorAttributes } from './errors/errorAttributes';
 import { errorValues } from './errors/errorValues';
 import { entryObj } from './objects/entryObjects';
+import { logObj } from './objects/logObjects';
 import { sessionObj } from './objects/sessionObjects';
 import { userObjAdmin, userObjStripped } from './objects/userObjects';
 import { paginationAttributes } from './pagination/paginationAttributes';
@@ -22,7 +24,9 @@ import { entryStrokeDefinition } from './type definitions/EntryStroke/entryStrok
 import { entryTypeDefinition } from './type definitions/EntryType/entryType';
 import { userRoleDefinition } from './type definitions/UserRole/userRole';
 import { userStatusDefinition } from './type definitions/UserStatus/userStatus';
-import { moderatorNoteDefinition } from './type definitions/moderatorNote/moderatorNote';
+import { logLevelDefinition } from './type definitions/LogLevel/logLevel';
+import { moderatorNoteDefinition } from './type definitions/ModeratorNote/moderatorNote';
+import { reqMethodDefinition } from './type definitions/ReqMethod/reqMethod';
 
 export const sections: SectionData[] = [
   {
@@ -93,6 +97,25 @@ export const sections: SectionData[] = [
     endpoints: entryEndpoints,
   },
   {
+    id: 'logs',
+    name: 'Logs',
+    description: `<p>Certain fetch requests are logged and stored in the database for future reference. 
+    Admins can search for and fetch logs. The following requests automatically create a new log: </p>
+    <div class="enum-values">
+      <ul>
+        <li>Successful POST, PATCH and DELETE requests. (severity: "info")</li>
+        <li>All requests that result in a 4** error (severity: "error")</li>
+        <li>All requests that result in a 5** server error (severity: "critical")</li>
+      </ul>
+    </div>
+   
+    
+    <p>Whenever a "critical" log is created, all admins are automatically notified by email.</p>
+    `,
+    objects: [logObj],
+    endpoints: logEndpoints,
+  },
+  {
     id: 'types',
     name: 'Type Definitions',
     description: `<p>The API uses Typescript, so the following type definitions are required to be 
@@ -104,6 +127,8 @@ export const sections: SectionData[] = [
       entryTypeDefinition,
       entryStageDefinition,
       entryStrokeDefinition,
+      logLevelDefinition,
+      reqMethodDefinition,
       moderatorNoteDefinition,
     ],
   },

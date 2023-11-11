@@ -14,3 +14,7 @@
 .child-attributes {
   margin-left: 3em;
 }
+
+.child-attributes h3 {
+  font-size: 14px;
+}

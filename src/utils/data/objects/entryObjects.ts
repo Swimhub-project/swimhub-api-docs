@@ -14,7 +14,7 @@ export const entryObj: ObjectData = {
   attributes: [
     {
       name: 'id',
-      description: `<p>Unique User ID automatically assigned from database.</p>`,
+      description: `<p>Unique Entry ID automatically assigned from database.</p>`,
       type: 'string',
       required: true,
     },

@@ -195,7 +195,7 @@ console.log(data);
       {
         name: 'userId',
         required: true,
-        description: `UserID for the account`,
+        description: `<p>UserID for the account</p>`,
         type: 'string',
       },
     ],
