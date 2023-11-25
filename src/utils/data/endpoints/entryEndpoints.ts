@@ -74,39 +74,178 @@ export const entryEndpoints: EndpointData[] = [
       },
     ],
     exampleReq: `const response = await fetch(
-      'https://swimhub-production.up.railway.app/entry?text=butterfly%20arms&page=1&limit=5'
-    );
+  'https://swimhub-production.up.railway.app/entry?text=butterfly%20arms&page=1&limit=5'
+);
     
-    const data = await response.json();
-    console.log(data);`,
+const data = await response.json();
+console.log(data);`,
     exampleRes: `{
-      "currentPage": 1,
-      "totalPages": 1,
-      "numberOfResults": 1,
-      "totalNumberOfResults": 1,
-      "users": [
-          {
-            "id": "clonx2fs60000w5rwh9pkqhgl",
-            "user_id": "clomi8jd90025w5xgbej4czxm",
-            "title": "butterfly arms",
-            "body": "Acquiro eum velum maxime.",
-            "author": "Nelson_Schiller",
-            "type": "exercise",
-            "created_on": "2023-02-25T01:18:03.000Z",
-            "updated_on": "2023-11-06T20:37:39.000Z",
-            "status": "public",
-            "teaching_points": [
-              "whoever switch shin",
-              "after defiantly untangle",
-              "impossible truly even"
-            ],
-            "stroke": "butterfly",
-            "stage": [
-              "stage_7",
-              "stage_3"
-            ]
-          } 
-      ]
-  }`,
+  "currentPage": 1,
+  "totalPages": 1,
+  "numberOfResults": 1,
+  "totalNumberOfResults": 1,
+  "users": [
+      {
+        "id": "clonx2fs60000w5rwh9pkqhgl",
+        "user_id": "clomi8jd90025w5xgbej4czxm",
+        "title": "butterfly arms",
+        "body": "Acquiro eum velum maxime.",
+        "author": "Nelson_Schiller",
+        "type": "exercise",
+        "created_on": "2023-02-25T01:18:03.000Z",
+        "updated_on": "2023-11-06T20:37:39.000Z",
+        "status": "public",
+        "teaching_points": [
+          "whoever switch shin",
+          "after defiantly untangle",
+          "impossible truly even"
+        ],
+        "stroke": "butterfly",
+        "stage": [
+          "stage_7",
+          "stage_3"
+        ]
+      } 
+  ]
+}`,
+  },
+  {
+    id: 'create_entry',
+    name: 'Create Entry',
+    method: 'POST',
+    url: '/entry/:id',
+    availableTo: 'user',
+    description: `<p>Creates a new entry in the database linked to the logged-in user.</p>`,
+    returns: `<p>Returns a copy of the created entry object, or an error if something went wrong.</p>`,
+    bodyParams: [
+      {
+        name: 'userId',
+        required: true,
+        description: `<p>The userId of the logged in user creating the entry.</p>`,
+        type: 'string',
+      },
+      {
+        name: 'title',
+        required: true,
+        description: `<p>The title of the entry.</p>`,
+        type: 'string',
+      },
+      {
+        name: 'body',
+        required: true,
+        description: `<p>The body content of the entry.</p>`,
+        type: 'string',
+      },
+      {
+        name: 'type',
+        required: true,
+        description: `<p>The type of entry. Must be a valid <a href="#entryType">EntryType</a></p>`,
+        type: 'EntryType',
+      },
+      {
+        name: 'stroke',
+        required: true,
+        description: `<p>The swimming stroke of the entry. Must be a valid <a href="#entryStroke">EntryStroke</a></p>`,
+        type: 'EntryStroke',
+      },
+      {
+        name: 'stage',
+        required: true,
+        description: `<p>An array of stages that apply to the entry. Each item in the array must be a valid <a href="#entryStage">EntryStage</a></p>`,
+        type: 'EntryStage[]',
+      },
+      {
+        name: 'teachingPoints',
+        required: true,
+        description: `<p>An array of teaching points that apply to the entry.</p>`,
+        type: 'string[]',
+      },
+    ],
+    exampleReq: `const response = await fetch(
+    'https://swimhub-production.up.railway.app/entry', 
+    {
+      headers: {
+        "content-type": "application/json"
+      },
+      method: "POST",
+      body: JSON.stringify({
+          "userId": "clo71e78x0000mc0olvreol2q",
+          "title": "How to swim",
+          "body": "The best way to swim is to not drown.",
+          "type": "tip",
+          "stroke": "general",
+          "stage": ["stage_1", "stage_2"],
+          "teachingPoints": ["don't drown!", "swim fast"]
+      }),
+    }
+  );`,
+    exampleRes: `{
+  "id": "clpdg27iw0003w5eckvrjk3p6",
+  "user_id": "clo71e78x0000mc0olvreol2q",
+  "title": "How to swim",
+  "body": "The best way to swim is to not drown.",
+  "author": "anomalous",
+  "type": "tip",
+  "created_on": "2023-11-25T02:40:41.622Z",
+  "updated_on": null,
+  "status": "public",
+  "teaching_points": [
+      "don&#x27;t drown!",
+      "swim fast"
+  ],
+  "stroke": "general",
+  "stage": [
+      "stage_1",
+      "stage_2"
+  ]
+}`,
+  },
+  {
+    id: 'delete_entry',
+    name: 'Delete Entry',
+    method: 'DELETE',
+    url: '/entry',
+    availableTo: 'admin',
+    description: `<p>Deletes an entry from the database. This action is only available to admins. 
+    Users only have the option to "soft-delete" an entry (see <a href="#update_entry">Update Entry</a> for more details</p>`,
+    returns: `<p>Returns a copy of the deleted entry object, or an error if something went wrong.</p>`,
+    urlParams: [
+      {
+        name: 'id',
+        required: true,
+        description: `<p>The Id of the entry to be deleted.</p>`,
+        type: 'string',
+      },
+    ],
+    exampleReq: `const response = await fetch(
+  'https://swimhub-production.up.railway.app/entry/clpdg27iw0003w5eckvrjk3p6', 
+  {
+    headers: {
+      "content-type": "application/json"
+    },
+    method: "DELETE",
+  }
+);`,
+    exampleRes: `{
+  "id": "clpdg27iw0003w5eckvrjk3p6",
+  "user_id": "clo71e78x0000mc0olvreol2q",
+  "title": "How to swim",
+  "body": "The best way to swim is to not drown.",
+  "author": "anomalous",
+  "type": "tip",
+  "created_on": "2023-11-25T02:40:41.622Z",
+  "updated_on": null,
+  "status": "public",
+  "teaching_points": [
+      "don&#x27;t drown!",
+      "swim fast"
+  ],
+  "stroke": "general",
+  "stage": [
+      "stage_1",
+      "stage_2"
+  ]
+} 
+    `,
   },
 ];

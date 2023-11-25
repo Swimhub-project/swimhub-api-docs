@@ -64,3 +64,7 @@ span.type {
   color: var(--grey);
   margin-left: 0.5em;
 }
+
+.object-display {
+  font-family: monospace;
+}
